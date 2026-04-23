@@ -1,16 +1,14 @@
 #include <stdio.h>
 
-// Lower Bound
 int lowerBound(int arr[], int n, int x) {
     int left = 0, right = n - 1;
-    int ans = n;
-
+    int ans = n;  
     while (left <= right) {
         int mid = left + (right - left) / 2;
 
         if (arr[mid] >= x) {
             ans = mid;
-            right = mid - 1;
+            right = mid - 1;  
         } else {
             left = mid + 1;
         }
@@ -18,7 +16,6 @@ int lowerBound(int arr[], int n, int x) {
     return ans;
 }
 
-// Upper Bound
 int upperBound(int arr[], int n, int x) {
     int left = 0, right = n - 1;
     int ans = n;
@@ -28,7 +25,7 @@ int upperBound(int arr[], int n, int x) {
 
         if (arr[mid] > x) {
             ans = mid;
-            right = mid - 1;
+            right = mid - 1; 
         } else {
             left = mid + 1;
         }
